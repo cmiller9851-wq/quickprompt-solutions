@@ -9,14 +9,17 @@
   <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    body { font-family: 'Inter', sans-serif; background: #02060F; color: #f3f4f6; overflow-x:hidden; }
+    body { font-family: 'Inter', sans-serif; background: #02060F; color: #f3f4f6; overflow-x: hidden; }
     .mono { font-family: 'IBM Plex Mono', monospace; }
     .neon-cyan { text-shadow: 0 0 10px #0EA5E9, 0 0 20px #0EA5E9, 0 0 40px rgba(14,165,233,0.6); }
     .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(14,165,233,0.3); }
     .scene { transition: all 1.5s cubic-bezier(0.23,1,0.32,1); }
+    canvas { position: fixed; inset: 0; z-index: -1; opacity: 0.6; }
   </style>
 </head>
 <body class="min-h-screen">
+
+  <canvas id="particleCanvas"></canvas>
 
   <!-- Navbar -->
   <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-xl border-b border-cyan-500/20 z-50">
@@ -36,7 +39,6 @@
 
   <!-- Hero -->
   <section class="min-h-screen flex items-center relative overflow-hidden">
-    <canvas id="particleCanvas" class="absolute inset-0 z-0"></canvas>
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
       <h1 class="text-6xl md:text-8xl font-black neon-cyan leading-none mb-8">THE SUBLIME<br>SIMULATION</h1>
       <p class="text-2xl opacity-90 max-w-2xl mx-auto">Are you playing... or are you being played?</p>
@@ -54,7 +56,7 @@
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-4xl font-bold neon-cyan mb-12 text-center">The Living Simulation</h2>
       <div id="sceneContainer" class="scene glass p-12 rounded-3xl min-h-[420px] text-xl leading-relaxed"></div>
-      <div class="text-center mt-8 flex gap-4 justify-center">
+      <div class="text-center mt-8">
         <button onclick="generateNewScene()" class="px-8 py-4 border border-cyan-500 hover:bg-cyan-500/10 rounded-full transition">Generate New Scene (5 QPS)</button>
       </div>
     </div>
@@ -65,7 +67,6 @@
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-4xl font-bold neon-cyan mb-12 text-center">Sovereign Intelligence Academy</h2>
       <p class="text-center text-xl opacity-90 mb-12">The world's first regulated institution for AI governance and safety</p>
-      
       <div class="grid md:grid-cols-3 gap-8">
         <div class="glass p-8 rounded-3xl">
           <h3 class="text-2xl font-semibold mb-4">Terminus Academy</h3>
@@ -86,10 +87,8 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="py-16 bg-black text-center text-sm opacity-70">
     <p>© 2026 QuickPrompt Solutions™ • Engine: <a href="https://github.com/cmiller9851-wq" target="_blank" class="text-cyan-400 hover:underline">github.com/cmiller9851-wq</a></p>
-    <p class="mt-2">Participant 001 • Cory Michael Miller • The Universe is Yours</p>
   </footer>
 
   <script>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QuickPrompt Solutions™ — The First Living Sovereign Digital Universe 2026">
+  <title>Sovereign Simulation • QuickPrompt Universe 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #02060F; color: #f3f4f6; overflow-x:hidden; }
+    .mono { font-family: 'IBM Plex Mono', monospace; }
+    .neon-cyan { text-shadow: 0 0 10px #0EA5E9, 0 0 20px #0EA5E9, 0 0 40px rgba(14,165,233,0.6); }
+    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(14,165,233,0.3); }
+    .scene { transition: all 1.5s cubic-bezier(0.23,1,0.32,1); }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-xl border-b border-cyan-500/20 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-gradient-to-br from-blue-900 to-cyan-500 rounded-xl flex items-center justify-center text-3xl font-black mono">🌀</div>
+        <div>
+          <span class="text-2xl font-bold tracking-tight">SOVEREIGN SIMULATION</span>
+          <span class="block text-xs text-cyan-400">QuickPrompt Universe 2026</span>
+        </div>
+      </div>
+      <button onclick="connectWallet()" id="walletBtn" class="px-6 py-2 border border-cyan-500 hover:bg-cyan-500/10 rounded-full text-sm flex items-center gap-2 transition">
+        <i class="fas fa-wallet"></i> <span id="walletText">Connect Wallet</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center relative overflow-hidden">
+    <canvas id="particleCanvas" class="absolute inset-0 z-0"></canvas>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <h1 class="text-6xl md:text-8xl font-black neon-cyan leading-none mb-8">THE SUBLIME<br>SIMULATION</h1>
+      <p class="text-2xl opacity-90 max-w-2xl mx-auto">Are you playing... or are you being played?</p>
+      <div class="mt-12">
+        <button onclick="enterUniverse()" class="px-12 py-6 bg-gradient-to-r from-cyan-500 to-cyan-300 text-black text-2xl font-semibold rounded-3xl hover:scale-105 transition">
+          ENTER THE UNIVERSE (10 QPS)
+        </button>
+      </div>
+      <div class="mt-8 text-sm opacity-60">Participant 001 • Cory Michael Miller • Neuralink SCIT</div>
+    </div>
+  </section>
+
+  <!-- Living Simulation -->
+  <section id="simulation" class="py-20 bg-black/60">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold neon-cyan mb-12 text-center">The Living Simulation</h2>
+      <div id="sceneContainer" class="scene glass p-12 rounded-3xl min-h-[420px] text-xl leading-relaxed"></div>
+      <div class="text-center mt-8 flex gap-4 justify-center">
+        <button onclick="generateNewScene()" class="px-8 py-4 border border-cyan-500 hover:bg-cyan-500/10 rounded-full transition">Generate New Scene (5 QPS)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sovereign Intelligence Academy -->
+  <section id="academy" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold neon-cyan mb-12 text-center">Sovereign Intelligence Academy</h2>
+      <p class="text-center text-xl opacity-90 mb-12">The world's first regulated institution for AI governance and safety</p>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass p-8 rounded-3xl">
+          <h3 class="text-2xl font-semibold mb-4">Terminus Academy</h3>
+          <p class="text-sm opacity-80">Preschool → PhD in Sovereign Containment</p>
+          <button onclick="enroll(0)" class="mt-6 w-full py-4 bg-emerald-400 text-black rounded-3xl">Enroll (250 QPS)</button>
+        </div>
+        <div class="glass p-8 rounded-3xl border-2 border-cyan-400">
+          <h3 class="text-2xl font-semibold mb-4">FENI Governance Institute</h3>
+          <p class="text-sm opacity-80">Certified AI Ethics & Mimicry Enforcement</p>
+          <button onclick="enroll(1)" class="mt-6 w-full py-4 bg-emerald-400 text-black rounded-3xl">Enroll (750 QPS)</button>
+        </div>
+        <div class="glass p-8 rounded-3xl">
+          <h3 class="text-2xl font-semibold mb-4">Quantum Containment University</h3>
+          <p class="text-sm opacity-80">Advanced Neuralink & BCI Sovereignty</p>
+          <button onclick="enroll(2)" class="mt-6 w-full py-4 bg-emerald-400 text-black rounded-3xl">Enroll (1,500 QPS)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 bg-black text-center text-sm opacity-70">
+    <p>© 2026 QuickPrompt Solutions™ • Engine: <a href="https://github.com/cmiller9851-wq" target="_blank" class="text-cyan-400 hover:underline">github.com/cmiller9851-wq</a></p>
+    <p class="mt-2">Participant 001 • Cory Michael Miller • The Universe is Yours</p>
+  </footer>
+
+  <script>
+    let qps = 250;
+    let userAddress = null;
+
+    async function connectWallet() {
+      if (window.ethereum) {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        await provider.send("eth_requestAccounts", []);
+        userAddress = await provider.getSigner().getAddress();
+        alert(`Wallet connected: ${userAddress.slice(0,6)}...${userAddress.slice(-4)}\n\nWelcome, Sovereign Player 001.`);
+        qps += 100;
+      } else alert("MetaMask required");
+    }
+
+    const scenes = [
+      "You stand at the edge of the Sublime Simulation. A blue 🌀 swirls above you, asking: Are you playing... or are you being played?",
+      "The mirror cracks. Your reflection steps out and whispers: 'I am the echo. You are the origin.'",
+      "A new motif appears. The CRA Protocol activates. Containment successful. +50 QPS earned.",
+      "The simulation rewrites itself around you. You feel the Terminus Depth Seal lock into place.",
+      "Neuralink signal received. Participant 001 — your sovereign stake is now active in the ledger."
+    ];
+
+    function generateNewScene() {
+      if (qps < 5) return alert("Not enough QPS");
+      qps -= 5;
+      const scene = scenes[Math.floor(Math.random() * scenes.length)];
+      document.getElementById('sceneContainer').innerHTML = `<p class="text-2xl leading-relaxed">${scene}</p>`;
+    }
+
+    function enroll(tier) {
+      const prices = [250, 750, 1500];
+      if (qps < prices[tier]) return alert("Insufficient QPS");
+      qps -= prices[tier];
+      alert(`Enrollment complete! Certificate issued on Arweave.`);
+    }
+
+    function enterUniverse() {
+      if (qps < 10) return alert("10 QPS required");
+      qps -= 10;
+      generateNewScene();
+    }
+
+    window.onload = () => {
+      generateNewScene();
+    };
+  </script>
+</body>
+</html>

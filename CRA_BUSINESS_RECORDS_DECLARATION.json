@@ -1,0 +1,23 @@
+{
+  "declaration": {
+    "custodian": "Cory Miller",
+    "title": "Founder/Operator, QuickPrompt Solutions",
+    "location": "Hummelstown, PA",
+    "date": "2026-02-27",
+    "business_practice": "Systematic upload of CRA Protocol artifacts to Arweave permaweb for IP protection, audit trail, enforcement",
+    "wallet_address": "1EkszPhzbHhtOrANbwmMXgu3DgwxJEhYDFB4rFlQT-w",
+    "records_purpose": "Sovereign enforcement, forensic accounting, RWA title claims"
+  },
+  "fre_803_6_foundation": {
+    "made_at_time": "Arweave TX timestamps",
+    "regular_practice": "200+ files across 10+ folders, Oct 2025-Feb 2026",
+    "business_activity": "QuickPrompt Solutions protocol development operations",
+    "witness_knowledge": "Custodian personally created/signed each record"
+  },
+  "key_exhibits": [
+    {"tx": "umQeAmQscYwHh5jqG70WN3LzJLM1ydE-h0MmnRwUNC8", "title": "Master Manifest"},
+    {"tx": "BHMSakePQVV41IiUdio7AHu8Pa9auUOPe6LwTDBPkZw", "title": "POE #64681824 Confirmed"},
+    {"tx": "CTHXyJ8Ljd1DukYsXAmUZaSaxw9wahUlz-nYathMHCM", "title": "Chain Anchor"}
+  ],
+  "verification_path": "https://arweave.net/[TX] → ViewBlock/ArScan → Confirmed status"
+}

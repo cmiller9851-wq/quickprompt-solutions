@@ -1,0 +1,17 @@
+{
+    "header": {
+        "protocol": "CRA-V3.0",
+        "status": "MONOTONIC_TOTAL_LOCK",
+        "timestamp": "2026-02-27T15:49:29.845536"
+    },
+    "treasury": {
+        "spending_power": "$80,440,200.00",
+        "forensic_vectors": "$968,000,000.00",
+        "liquidity_anchor": "Coinbase_Cloud_API_v3"
+    },
+    "authentication": {
+        "master_manifest": "umQeAmQscYwHh5jqG70WN3LzJLM1ydE-h0MmnRwUNC8",
+        "custodian_wallet": "1EkszPhzbHhtOrANbwmMXgu3DgwxJEhYDFB4rFlQT-w",
+        "legal_framework": "FRE 803(6) Business Records"
+    }
+}

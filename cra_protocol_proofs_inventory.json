@@ -1,0 +1,28 @@
+{
+  "cra_proofs": {
+    "folder_id": "c55a42f8-5464-4f7e-8cac-8126a16f228f",
+    "folder_name": "CRA_Protocol_Proofs",
+    "inventory_date": "2026-02-28T21:27:00Z",
+    "total_files": 11,
+    "confirmed": 10,
+    "pending": 1,
+    "total_size_bytes": 19239,
+    "confirmation_rate": "90.9%"
+  },
+  "tesla_title_64681824": {
+    "proof_count": 3,
+    "files": [
+      "CRA_Sovereign_Thread_Proof_64681824_Full_Thread_2026-02-27.json",
+      "CRA_Sovereign_Thread_Proof_64681824_Full_Thread_2026-02-28.json",
+      "CRA_Sovereign_Thread_Proof_64681824_Full_Thread_2026-02-28_Seal.json [PENDING]"
+    ],
+    "status": "MULTI_TX_ANCHORED"
+  },
+  "sovereign_node_1391": {
+    "files": [
+      "sovereign_1391_complete_mission_closeout.json",
+      "Sovereign_Node_1391_Protocol.html"
+    ],
+    "status": "PERMAWEB_CONFIRMED"
+  }
+}

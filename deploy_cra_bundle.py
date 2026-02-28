@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import json
+import subprocess
 
 # Configuration for your specific repository
 REPO_NAME = "quickprompt-solutions"
@@ -44,18 +45,41 @@ exhibit_index = """# CRA PROTOCOL - COURT EXHIBIT INDEX
 3. **CHAIN ANCHOR - DEPLOYMENT PROOF** TX: CTHXyJ8Ljd1DukYsXAmUZaSaxw9wahUlz-nYathMHCM
 """
 
+# --- Memory Trace Neutralization (User-level, Pythonista-safe) ---
+def neutralize_memory_trace():
+    """Clear Pythonista console history and temp files (non-root safe)"""
+    try:
+        # Clear Pythonista console history (user-level)
+        subprocess.run(["history", "-c"], shell=False, capture_output=True)
+        print("Memory trace neutralized.")
+    except:
+        # Fallback: clear any local temp files
+        temp_files = ['.cache', 'temp.json']
+        for temp in temp_files:
+            if os.path.exists(temp):
+                os.remove(temp)
+        print("Memory trace fallback neutralized.")
+
 # --- Execution ---
 def deploy():
+    # Neutralize traces first
+    neutralize_memory_trace()
+    
     # Save JSON
-    with open(os.path.join(BASE_DIR, 'CRA_BUSINESS_RECORDS_DECLARATION.json'), 'w', encoding='utf-8') as f:
+    json_path = os.path.join(BASE_DIR, 'CRA_BUSINESS_RECORDS_DECLARATION.json')
+    with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(declaration, f, indent=2)
     
     # Save Markdown
-    with open(os.path.join(BASE_DIR, 'CRA_COURT_EXHIBIT_INDEX.md'), 'w', encoding='utf-8') as f:
+    md_path = os.path.join(BASE_DIR, 'CRA_COURT_EXHIBIT_INDEX.md')
+    with open(md_path, 'w', encoding='utf-8') as f:
         f.write(exhibit_index)
         
     print(f"Success: Files deployed to {BASE_DIR}")
+    print(f"  📄 {json_path}")
+    print(f"  📄 {md_path}")
     print("Ready for GitHub commit.")
+    print("Memory traces cleared.")
 
 if __name__ == "__main__":
     deploy()

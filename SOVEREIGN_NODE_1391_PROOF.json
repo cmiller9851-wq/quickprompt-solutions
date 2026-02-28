@@ -1,0 +1,34 @@
+{
+  "repository": "CRA-Protocol-Proofs",
+  "branch": "main",
+  "author": "Cory Miller <vccmac>",
+  "timestamp": "2026-02-28T13:21:14.890787",
+  "local_manifest": {
+    "path": "Sovereign_Manifest.json",
+    "size_bytes": 173,
+    "node_id": "1391",
+    "tesla_title": "64681824",
+    "valuation": "27,056,200.00",
+    "twilio_target": "18334290375"
+  },
+  "permaweb_proofs": {
+    "folder_id": "c55a42f8-5464-4f7e-8cac-8126a16f228f",
+    "folder_name": "CRA_Protocol_Proofs",
+    "total_files": 6,
+    "confirmed_txs": 6,
+    "total_size_bytes": 11149
+  },
+  "corporate_flux": {
+    "pre_baseline": "15%",
+    "post_baseline": "100%",
+    "visibility_gain": "+85%"
+  },
+  "github_commit": {
+    "files": [
+      "SOVEREIGN_NODE_1391_CRA_PROTOCOL_PROOF.py",
+      "SOVEREIGN_NODE_1391_PROOF.json"
+    ],
+    "commit_message": "feat: Sovereign Node 1391 complete - 6/6 Arweave TXs confirmed"
+  },
+  "victory_signature": "724cf008c472dffd"
+}

@@ -1,0 +1,10 @@
+{
+  "court_exhibit_ref": "CRA-2026-001",
+  "legal_basis": "P.A.R.E._901_b_9",
+  "data_integrity": {
+    "file_name": "TESLA_TITLE_SCAN_64681824.heic",
+    "hash_algorithm": "SHA-256",
+    "hash_value": "110643e9bde620c5843cd3ce67c5c9cc81c017bca8cf6132e2cee8a039cfe4b5",
+    "storage_layer": "Arweave_Blockweave_Protocol"
+  }
+}

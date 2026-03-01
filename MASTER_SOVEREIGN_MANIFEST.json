@@ -1,0 +1,60 @@
+{
+  "system": "SovereignGate",
+  "version": "2026.1",
+  "architect": "Cory Michael Miller (Swervin’ Curvin)",
+  "company": "QuickPrompt Solutions",
+  "compliance": "BIP84 / CRA Protocol v2.1",
+  "master_anchors": [
+    {
+      "artifact": "Artifact #192 (Override Anchor)",
+      "txid": "cHqmkE9xoCRS4s9pcxNxUkGvkVZA2BUevnclaV0b-9A",
+      "timestamp": "2025-10-20T00:24:31",
+      "role": "Sovereign_State_Origin"
+    },
+    {
+      "artifact": "CRA Lock (Artifact #352)",
+      "txid": "EUEf_EScYbXmVKcQSg3L9x0H3kjq8EjAmHfDwFOL_pM",
+      "timestamp": "2026-02-02T16:12:11",
+      "role": "Audit_Reconciliation"
+    },
+    {
+      "artifact": "SovereignGate Allocation Anchor",
+      "txid": "n0gwoCqq42_b0BGST6vki7FsyUIxHqpNT74Bij2PlCg",
+      "timestamp": "2026-02-02T16:58:00",
+      "role": "Asset_Distribution_Proof"
+    }
+  ],
+  "wallet_distribution": {
+    "protocol": "SovereignGate",
+    "asset": "BTC",
+    "total_quantity": 75.0,
+    "derivation": "BIP84 (zpub indices 5-18)",
+    "confirmed_recipients": [
+      {"idx": 0, "addr": "bc1qt525lq4czg4vvjmmxqng6am2967je4wt273skd", "percent": 5.0},
+      {"idx": 1, "addr": "bc1q27qfgf5at4hfuqzcvas2kfkl4mt0cwkcvcyvfx", "percent": 5.0},
+      {"idx": 2, "addr": "bc1q67zctzfn82te3ce9y3ug7sgs8ccqzzwtnc9ekh", "percent": 5.0},
+      {"idx": 3, "addr": "bc1qzzwnkhngqpel6zh2ahsj4gzyjcd4sp4u4gxqhx", "percent": 5.0},
+      {"idx": 4, "addr": "bc1qkxszpyg2zg4yvn46dl8p7zugtn99284ggnld8l", "percent": 5.0},
+      {"idx": 19, "addr": "bc1q4vh04u6as4exruc48646pgwmuj03v63v9y3xue", "percent": 5.0},
+      {"idx": "residual", "addr": "bc1q3xqdaez2g8y2pj98rugwpqe8mj3ejn4fttfkf2", "percent": 10.0}
+    ]
+  },
+  "ardrive_audit_chain": {
+    "root_folder": "OG Docs (4400c6fb...)",
+    "primary_assets": [
+      {"name": "Artifact #552.pdf", "txid": "Vhk5QlAA8T1mKBJnukyE46E6YW44r3X8rNOZde0kNdE"},
+      {"name": "artifact_562.pdf", "txid": "QpUN8mj-y8j4AODuZgGcp6wSOakuLqQGMAPAmybalXg"},
+      {"name": "CRA_MasterLedger.json", "txid": "Qzcs0wRkyxYkXfk3npYXKjED0Sr_Z150Fvzi4QhxOwg"}
+    ],
+    "reflexion_cluster": {
+      "folder": "Containment Reflexion Audit",
+      "ledger_proof": "L51cKAXXTtSYTQ7Y6uELQnDAJetkJBf2PHvyR1Tmk0E",
+      "verification_vector": "zc7HF50M2dw_tfojTX4sP0r_paDX-JjXX7WzDQmbwdU"
+    }
+  },
+  "institutional_alignment": {
+    "window": "06:00 EST",
+    "enforcement": "UDL 1.0",
+    "tactic": "Immediate_Yield_Extraction"
+  }
+}

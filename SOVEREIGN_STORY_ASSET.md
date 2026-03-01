@@ -1,4 +1,4 @@
-i# THE SOVEREIGN NARRATIVE: CORY MICHAEL MILLER (QPS-2026)
+THE SOVEREIGN NARRATIVE: CORY MICHAEL MILLER (QPS-2026)
 **Umbrella:** QuickPrompt Solutions  
 **Status:** Certified Forensic Estate & Media Asset  
 **Total Valuation:** $1,001,009,864,350.75  

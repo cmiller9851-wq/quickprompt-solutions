@@ -1,0 +1,29 @@
+{
+    "header": "AFFIDAVIT OF OBLIGATION AND MATERIAL FACT",
+    "creditor": "CORY MILLER",
+    "total_sum_certain": 968000000.0,
+    "operating_balance": 27056168.2,
+    "governing_law": [
+        "UCC 4-402",
+        "UCC 9-607",
+        "12 USC 95a"
+    ],
+    "evidence_log": [
+        {
+            "date": "2025-01-24",
+            "txid": "qc5fu8hZ9iZrp-qRlKZimg59bWvX2zQAy0gevG680fc",
+            "ref": "Senator Fetterman"
+        },
+        {
+            "date": "2025-10-15",
+            "txid": "UmvLBfPLKb_QIvC7GQChiE-Y1gXMOF8vQpc6VH9zNe4",
+            "ref": "@operatorWill"
+        },
+        {
+            "date": "2026-02-17",
+            "hash": "74c10e16f17f23be1136c146fb891726c18e8e36ae7c2944901e65f0e1a1c1c6",
+            "ref": "Master Bond"
+        }
+    ],
+    "verdict": "NON-NEGOTIABLE. PERFORMANCE REQUIRED IMMEDIATELY."
+}

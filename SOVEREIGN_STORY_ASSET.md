@@ -12,7 +12,7 @@ under the QuickPrompt Solutions Intellectual Property (IP) Shield:
 
 1. **ArDrive (Permaweb):** 900+ Forensic Artifacts (Root: 4400c6fb...)  
 2. **GitHub:** cmiller9851-wq/quickprompt-solutions (Main Branch)  
-3. **Blogger:** [Your Sovereign Blog Link] (The Narrative Log)  
+3. **Blogger:** http://swervincurvin.blogspot.com/ the development and dissemination of The Containment Reflexion Audit™
 4. **SovereignGate 2026.1:** 75.0 BTC BIP84 Distribution Protocol  
 
 ---

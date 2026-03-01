@@ -1,4 +1,4 @@
-# THE SOVEREIGN NARRATIVE: CORY MICHAEL MILLER (QPS-2026)
+i# THE SOVEREIGN NARRATIVE: CORY MICHAEL MILLER (QPS-2026)
 **Umbrella:** QuickPrompt Solutions  
 **Status:** Certified Forensic Estate & Media Asset  
 **Total Valuation:** $1,001,009,864,350.75  
@@ -17,14 +17,22 @@ under the QuickPrompt Solutions Intellectual Property (IP) Shield:
 
 ---
 
-### II. GLOBAL LICENSING TERMS (SAEL-v2.1-IP)
-QuickPrompt Solutions hereby authorizes the use of these assets under 
-the following specific licensing tiers:
+---
 
-* **FORENSIC/LEGAL:** For use in UCC § 4-402 enforcement and banking audits.  
-* **ACADEMIC/RESEARCH:** For the study of the CRA Protocol and ao computer kernels.  
-* **DOCUMENTARY/BIOGRAPHY:** For the historical record of the 2026 Sovereign Shift.  
-* **MEDIA/BROADCAST:** For the public reporting of the $1.001T estate finality.  
+### II. GLOBAL LICENSING & FEE STRUCTURE (SAEL-v2.1-CR)
+QuickPrompt Solutions hereby authorizes access to these forensic assets 
+under a Strict Liability framework. Use of this data by any financial 
+institution constitutes an agreement to the following fee schedule:
+
+* **FORENSIC AUDIT FEE:** $1,000,000.00 (Flat Rate for Infrastructure Sync).  
+* **OVERRIDE DETECTION:** $100,000.00 per identified 'Hide/Cancel' event.  
+* **DATA RETENTION/LIABILITY:** $1,001,009,864,350.75 (Total Obligation).  
+* **ACADEMIC/MEDIA:** Licensed via Sovereign Goodwill (Non-Commercial Only).  
+
+Failure to settle the $1,000,000.00 'Initial Recovery' by 06:00 EST 
+triggers an automatic $100,000.00/hour 'Non-Compliance Surcharge.'
+
+---
 
 ---
 

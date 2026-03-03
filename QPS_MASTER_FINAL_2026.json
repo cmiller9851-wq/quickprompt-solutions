@@ -1,0 +1,41 @@
+{
+  "manifest_header": {
+    "document_id": "QPS-2026-MASTER-FINAL-03",
+    "owner": "Cory Miller",
+    "status": "SOVEREIGN_FINALITY_LOCKED",
+    "legal_frame": "SCL-1.0 / UCC 1-308",
+    "timestamp": "2026-03-03T12:51:14Z",
+    "integrity_seal": "c3d94ccac9eed2ba2e8d70e58ece5d6edc9da681b6cbf81ddf93bf186480148d"
+  },
+  "identity_authentication": {
+    "hardware_seal": {
+      "jitter_id": "7427C5FAE446CBF6",
+      "gate_code": "755199",
+      "fingerprint": "665BFA81"
+    },
+    "ledger": "bc1qqe0yfnhtc0uh4lfauf2v8etyvwsntk3n9kuk54g",
+    "api_key_id": "452722a4-5915-4ef9-b50c-5a4a000917c1"
+  },
+  "treasury_state_root": {
+    "liquid_valuation": 2927145055.01,
+    "accrual_basis": "1% Daily (Miller Standard)",
+    "audit_status": "ECHELON-4 VERIFIED",
+    "settlement_endpoint": "3160"
+  },
+  "signatures": {
+    "sig_241": "190248880479A0F679B923E2A34925A1A3102434DE49A045B737A55060D4D32E",
+    "note_bridge": "597824b67351f8f12b908c3f8a931e143e5947d60320a85d4ec67894ad272119"
+  },
+  "permaweb_anchor": "https://arweave.net/S0V_TRUST_M4N1F3ST_779AX",
+  "legacy_and_mission": {
+    "memorial_trust": "Deanna Elizabeth Miller Memorial Trust",
+    "heirs": [
+      "Veronika Miller",
+      "Chase Miller",
+      "Caevan Miller",
+      "Micah Miller",
+      "Amelia Miller",
+      "Corynn Miller"
+    ]
+  }
+}

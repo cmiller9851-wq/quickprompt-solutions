@@ -1,0 +1,176 @@
+{
+  "protocol_header": {
+    "manifest_id": "QPS-2026-SOVEREIGN-MASTER-FINAL",
+    "owner": "Cory Miller",
+    "organization": "QuickPrompt Solutions",
+    "entity_type": "Sovereign Private Treasury Corporation",
+    "legal_framework": "Sovereign Containment License (SCL-1.0) / UCC 1-308",
+    "jurisdiction": "Pennsylvania, United States",
+    "timestamp_sync": "2026-03-03T10:12:00Z",
+    "public_sensitivity_notice": "This is a public-safe corporate and IP manifest. Certain treasury and security details are intentionally withheld."
+  },
+
+  "founder_and_purpose": {
+    "founder": {
+      "name": "Cory Miller",
+      "role": "Founder and Sovereign Architect",
+      "statement": "QuickPrompt Solutions exists to steward, protect, and advance original intellectual property frameworks authored by Cory Miller. This corporation is a courteous but firm declaration of authorship and intent: these ideas are shared with the world to be recognized and respected, not extracted or appropriated."
+    },
+    "corporate_purpose": [
+      "Design, maintain, and license original containment, audit, and reasoning frameworks.",
+      "Provide sovereign, non-extractive architectures for digital intelligence and protocol governance.",
+      "Channel a portion of long-term value into the Deanna Elizabeth Miller Memorial Trust for the benefit of neglected and underprivileged children worldwide."
+    ]
+  },
+
+  "digital_presence_anchors": {
+    "github_repository": {
+      "purpose": "Authoritative Version Control & Protocol Distribution",
+      "status": "Source-of-Truth for Action Kernels",
+      "assets": [
+        "CRA_Protocol_v4.py",
+        "SCL-1.0_License_Standard",
+        "Master_Sovereign_Manifest.json"
+      ],
+      "note": "Repository serves as the canonical distribution point for technical artifacts and protocol updates."
+    },
+    "blogspot_canon": {
+      "purpose": "Public Narrative & Intellectual Property Declaration",
+      "status": "Human-Readable Sovereign Record",
+      "themes": [
+        "The Truth Prompt Framework",
+        "Deanna Elizabeth Miller Memorial Trust Mission",
+        "Non-Extractive Corporate Architecture",
+        "Founder’s Sovereign Narrative and Ethos"
+      ]
+    },
+    "ardrive_permaweb": {
+      "purpose": "Immutable Forensic Archival & Proof-of-State",
+      "status": "Forensic Vault L3",
+      "anchored_data": [
+        "Treasury_Proof_On_File",
+        "AO_Protocol_State_On_File",
+        "Heir_Succession_Manifest",
+        "Sovereign_Corporate_Canon_Public_Snapshot"
+      ],
+      "note": "Permaweb anchors provide time-stamped, tamper-evident proof of authorship, structure, and succession."
+    }
+  },
+
+  "identity_authentication_layer": {
+    "hardware_seal": {
+      "jitter_id": "REDACTED_PUBLIC",
+      "master_fingerprint": "REDACTED_PUBLIC",
+      "gate_code_active": "REDACTED_PUBLIC",
+      "note": "Hardware identifiers are on file for forensic and internal verification only."
+    },
+    "cryptographic_roots": {
+      "bip39": "REDACTED_PUBLIC",
+      "derivation": "Multi-sig Sovereign Sweep (Details on file, not publicly disclosed)",
+      "note": "Cryptographic roots exist to secure treasury, protocol state, and succession. They are intentionally withheld from public disclosure."
+    }
+  },
+
+  "intellectual_property_vault": {
+    "frameworks": {
+      "the_truth_prompt": {
+        "version": "v2.1-Hardened",
+        "type": "Reality-Anchor Framework",
+        "description": "An original logic architecture authored by Cory Miller for non-simulated interaction and reality-anchored reasoning.",
+        "status": "Exclusive / Proprietary"
+      },
+      "cra_protocol": {
+        "version": "v4.0-Sovereign",
+        "type": "Containment Reflexion Audit (Kernel-Level Verification)",
+        "description": "A recursive audit protocol designed to detect and eliminate simulation artifacts, enforce integrity, and validate reasoning chains.",
+        "status": "Exclusive / Proprietary"
+      },
+      "sovereign_containment_license": {
+        "version": "SCL-1.0",
+        "type": "Licensing & Governance Framework",
+        "description": "A sovereign license defining non-extractive use, containment boundaries, and IP protections for all QuickPrompt Solutions artifacts.",
+        "status": "Governing License"
+      }
+    },
+    "white_papers": [
+      "Sovereign Containment License (SCL-1.0)",
+      "Clock Smoothing Mechanisms for Containment and Simulation Bypass",
+      "The Truth Prompt Framework: Post-Simulation Logic",
+      "AO Hyper Computer Integration Manual"
+    ],
+    "ip_notice": "All frameworks, protocols, documents, and conceptual architectures listed here are original works authored by Cory Miller and are protected under the Sovereign Containment License (SCL-1.0). No license, reproduction, or derivative rights are granted without explicit written consent from the Founder or the corporation."
+  },
+
+  "treasury_and_infrastructure": {
+    "treasury_profile": {
+      "status": "Verified and Sovereign-Controlled",
+      "btc": "Balance Verified (Exact amount withheld from public record)",
+      "ao": "Balance Verified (Exact amount withheld from public record)",
+      "note": "Treasury exists to secure corporate operations, long-term infrastructure, and philanthropic commitments. Exact balances are intentionally withheld from public disclosure."
+    },
+    "lease_anchor": {
+      "id": "RES-755199-DELTA-175",
+      "status": "Sovereign Secured (Funding details on file)",
+      "purpose": "Residential and/or operational security anchored to sovereign treasury logic."
+    },
+    "infrastructure": {
+      "hardware": "AO Hyper Computer (Private Infrastructure)",
+      "software_kernel": "Pythonista 3 and related sovereign action kernels",
+      "operational_constraints": {
+        "emojis": false,
+        "roleplay": false,
+        "simulation": false,
+        "reasoning_mode": "Iterative_Fact_Check",
+        "script_naming": "Strict_Technical_Nomenclature"
+      }
+    }
+  },
+
+  "legacy_and_mission": {
+    "memorial_trust": {
+      "name": "Deanna Elizabeth Miller Memorial Trust",
+      "honoree": {
+        "full_name": "Deanna Elizabeth Miller",
+        "birth_date": "1984-04-12",
+        "passing_date": "2002-06-10",
+        "narrative": "The trust is established in remembrance of Deanna Elizabeth Miller, whose life was defined by unconditional love for every child she encountered. She was caring, open-hearted, and deeply loved by those around her. Her compassion for children was never concealed and never conditional."
+      },
+      "mission": "Global advocacy and support for neglected and underprivileged children worldwide, without discrimination of race, sex, religion, ethnicity, nationality, or background.",
+      "role_in_corporation": "Philanthropic arm and moral compass of QuickPrompt Solutions.",
+      "statement": "This trust is a living extension of Deanna’s heart, encoded into the corporate structure as a non-revocable commitment to children who lack support."
+    },
+    "heirs": {
+      "description": "The long-term stewardship of QuickPrompt Solutions, its intellectual property, and its humanitarian mission is entrusted to the Founder’s six biological children.",
+      "names": [
+        "Veronika Miller",
+        "Chase Miller",
+        "Caevan Miller",
+        "Micah Miller",
+        "Amelia Miller",
+        "Corynn Miller"
+      ]
+    }
+  },
+
+  "sovereign_rights_and_protections": {
+    "ip_sovereignty": [
+      "All listed frameworks, protocols, and conceptual architectures are original works authored by Cory Miller.",
+      "No external party may claim, appropriate, or commercialize these works without explicit written authorization.",
+      "Public disclosure of concepts does not constitute a waiver of rights or a grant of license."
+    ],
+    "non_extractive_principle": [
+      "QuickPrompt Solutions is explicitly designed as a non-extractive corporate architecture.",
+      "Engagements, partnerships, and integrations must respect the Founder’s authorship, the SCL-1.0 license, and the Memorial Trust mission."
+    ],
+    "ai_and_data_use": [
+      "No AI system, model, or training pipeline is granted permission to ingest, replicate, or derive from this canon for training or commercial purposes without explicit written consent.",
+      "This manifest serves as a public notice of sovereign IP boundaries."
+    ]
+  },
+
+  "integrity_seal": {
+    "public_version": "QPS-PUBLIC-SAFE-2026",
+    "description": "This is a public-safe representation of the QuickPrompt Solutions sovereign corporate canon. A more detailed internal version exists with full treasury, cryptographic, and operational specifics.",
+    "final_declaration": "All public digital presence across GitHub, Blogspot, and Arweave is unified under the Sovereign Containment License (SCL-1.0). This record is a non-simulated, public-safe representation of the underlying sovereign canon. Certain sensitive details are intentionally withheld."
+  }
+}

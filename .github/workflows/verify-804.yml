@@ -1,0 +1,20 @@
+name: 804 Local Verification
+
+on:
+  push:
+    paths:
+      - '804_ANCHOR.json'
+
+jobs:
+  verify_integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Verify Forensic Hash
+        run: |
+          # Simple logic: Does the repo's current state match the anchor?
+          EXPECTED=$(jq -r '.sync_id' 804_ANCHOR.json)
+          echo "Verifying against Anchor: $EXPECTED"
+          # (Insert internal validation logic here)

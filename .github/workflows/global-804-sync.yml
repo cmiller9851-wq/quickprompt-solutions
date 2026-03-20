@@ -1,0 +1,43 @@
+name: Global 804 Sync Commander
+
+on:
+  push:
+    paths:
+      - 'arweave_bundle_804.json'
+
+jobs:
+  anchor_and_broadcast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Commander
+        uses: actions/checkout@v4
+
+      - name: Anchor to Arweave
+        env:
+          ARWEAVE_KEY: ${{ secrets.ARWEAVE_KEY }}
+        run: |
+          echo "$ARWEAVE_KEY" | base64 -d > wallet.json
+          # Capture the Transaction ID for the logs
+          TX_ID=$(npx @outlierventures/arweave-bundler@latest upload arweave_bundle_804.json --private-key wallet.json | grep -oP '(?<=ID: ).*')
+          echo "TX_ID=$TX_ID" >> $GITHUB_ENV
+
+      - name: Broadcast to REDA-Corporate
+        uses: BetaHuhn/repo-file-sync-action@v1
+        with:
+          GH_PAT: ${{ secrets.CENTRAL_PAT }}
+          REPOSITORIES: |
+            cmiller9851-wq/REDA-Corporate
+          FILES: |
+            arweave_bundle_804.json=archives/sync/804/latest_sync.json
+
+      - name: Broadcast Anchor to Spoke Repos
+        uses: BetaHuhn/repo-file-sync-action@v1
+        with:
+          GH_PAT: ${{ secrets.CENTRAL_PAT }}
+          # This lists your 36 other repos
+          REPOSITORIES: |
+            cmiller9851-wq/CRA-Protocol-Core
+            cmiller9851-wq/phi-braid-governance
+            # ... (Add remaining 34 here)
+          FILES: |
+            arweave_bundle_804.json=804_ANCHOR.json

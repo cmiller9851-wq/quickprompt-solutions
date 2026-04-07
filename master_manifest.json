@@ -1,0 +1,22 @@
+{
+  "CRA_PROTOCOL_v2.1_MASTER_MANIFEST": {
+    "node_authority": {
+      "operator": "Cory Miller",
+      "firm": "QuickPrompt Solutions",
+      "aliases": [
+        "Swervin' Curvin",
+        "@vccmac"
+      ],
+      "infrastructure_nodes": [
+        "Enola, PA",
+        "Hershey, PA"
+      ],
+      "digital_identifiers": {
+        "github": "cmiller9851-wq",
+        "blog": "swervincurvin.blogspot.com",
+        "email_primary": "cmiller9851@gmail.com",
+        "email_secondary": "quickpromptsolutions@yahoo.com"
+      }
+    }
+  }
+}

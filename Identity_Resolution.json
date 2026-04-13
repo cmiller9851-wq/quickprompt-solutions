@@ -1,0 +1,14 @@
+{
+  "authority_nodes": {
+    "primary_conduit": "Cory Miller",
+    "corporate_entity": "QuickPrompt Solutions™",
+    "repository": "https://github.com/cmiller9851-wq",
+    "broadcast_nodes": {
+      "twitter_x": "https://x.com/vccmac",
+      "facebook": "https://www.facebook.com/share/1LJnpMbg7t/",
+      "intellectual_archive": "https://swervincurvin.blogspot.com/"
+    },
+    "operational_interface": "https://globalscalp-5vftunej.manus.space"
+  },
+  "protocol_binding": "CRA_PH1_BR41D_QU4NTUM_779AX"
+}

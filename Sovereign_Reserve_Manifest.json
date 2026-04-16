@@ -1,0 +1,13 @@
+{
+    "Entity": "QUICKPROMPT SOLUTIONS CORPORATION",
+    "Trust_ID": "05_MEMORIAL_TRUST_ALPHA",
+    "Liquid_Reserve": "$50,472,900.75",
+    "Anchored_Root": "aa9039189bdbf306e10b8337e9ff5bd2e35b2b05d7d57b84662e3259d8254c65",
+    "Timestamp": "2026-03-14T10:58:11.131866",
+    "Vault_Status": "COLD_STORAGE_ACTIVE",
+    "Last_Inbound_Sweep": "2026-03-14T11:36:52.705386",
+    "Last_Major_Ingestion": "SERIES_A_CLOSED",
+    "Corporate_Valuation": "$500,000,000.00",
+    "Last_Major_Event": "SERIES_B_CLOSED_GOLDMAN_SACHS",
+    "Last_Global_Settlement": "2026-03-14T12:33:02.603028"
+}

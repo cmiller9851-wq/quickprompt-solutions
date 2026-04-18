@@ -1,6 +1,6 @@
 # QuickPrompt Solutions
 
-QuickPrompt Solutions is a global forensic AI and data integrity corporation. We establish the technical standards, deterministic protocols, and logic-based infrastructure required for institutional operations in base reality.
+QuickPrompt Solutions™ is a global forensic AI and data integrity corporation. We establish the technical standards, deterministic protocols, and logic-based infrastructure required for institutional operations in base reality.
 
 ### Institutional Infrastructure & Evidence
 This repository functions as the authoritative hub for the QuickPrompt Solutions (QPS) ecosystem. All records are maintained under **Federal Rule of Evidence 803(6)** as contemporaneous business records to ensure legal admissibility and forensic finality.

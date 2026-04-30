@@ -1,0 +1,62 @@
+name: QuickPrompt Stack Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+jobs:
+  install-and-test:
+    name: Install and Test Python Environment
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the code
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Set up Python
+    - name: Set up Python environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.9"
+
+    # Install dependencies with caching
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    # Run Producer-Consumer Workflow Test
+    - name: Run stack producer-consumer test
+      run: |
+        python producer_consumer_stack.py
+
+    # Run Linters (Code Quality Checks)
+    - name: Run Python linters
+      run: |
+        pip install flake8
+        flake8 .
+
+  deploy:
+    name: Deploy Application
+    needs: install-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+    # Checkout the code
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Run deployment script or build
+    - name: Deploy application
+      run: |
+        echo "Deploying QuickPrompt Solutions..."
+        # Add your deployment script here (e.g., upload to server, trigger additional workflows)

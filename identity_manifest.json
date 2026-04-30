@@ -1,0 +1,27 @@
+{
+  "identity": {
+    "name": "Cory Miller",
+    "organization": "QuickPrompt Solutions™",
+    "location": "Middletown, PA",
+    "verification_assets": {
+      "x_platform": {
+        "handle": "@vccmac",
+        "url": "https://x.com/vccmac?s=21",
+        "status": "Verified"
+      },
+      "blogger_nexus": {
+        "title": "Swervin Curvin",
+        "url": "https://swervincurvin.blogspot.com/",
+        "status": "Active"
+      },
+      "facebook_personal": {
+        "url": "https://www.facebook.com/share/1ESKWNf9pr/?mibextid=wwXIfr",
+        "status": "Verified"
+      },
+      "facebook_business": {
+        "url": "https://www.facebook.com/share/18hu8ubBuY/?mibextid=wwXIfr",
+        "status": "Active"
+      }
+    }
+  }
+}

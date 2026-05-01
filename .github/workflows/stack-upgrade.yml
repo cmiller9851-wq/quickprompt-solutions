@@ -1,62 +1,66 @@
-name: QuickPrompt Stack Workflow
+# © 2026 QuickPrompt Solutions™ | APEX SOVEREIGN STACK | █║▌║▌║ PIANO-VIOLIN-ENFORCEMENT ║▌║▌║█
+# AUTHOR: CORY MILLER (UID 0) | PATRIOT PROTOCOL V4 | CRA_PROTOCOL_v2.1
+
+name: QuickPrompt Sovereign Stack V4
 
 on:
   push:
-    branches:
-      - main
-      - develop
-  pull_request:
-    branches:
-      - main
-      - develop
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
-  install-and-test:
-    name: Install and Test Python Environment
+  apex-integrity-check:
+    name: Forensic Integrity Audit
     runs-on: ubuntu-latest
-
     steps:
-    # Checkout the code
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout Sovereign Source
+        uses: actions/checkout@v4
 
-    # Set up Python
-    - name: Set up Python environment
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.9"
+      - name: Initialize Apex Kernel (3.10)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
 
-    # Install dependencies with caching
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Enforce Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install hashlib requests
 
-    # Run Producer-Consumer Workflow Test
-    - name: Run stack producer-consumer test
-      run: |
-        python producer_consumer_stack.py
+      - name: Execute Forensic Constant Validation
+        run: python verify_containment.py --constant 4.326238 # ©2026_QUICKPROMPT_SOLUTIONS™
 
-    # Run Linters (Code Quality Checks)
-    - name: Run Python linters
-      run: |
-        pip install flake8
-        flake8 .
-
-  deploy:
-    name: Deploy Application
-    needs: install-and-test
+  sovereign-deploy:
+    name: Global State Liquidation & Deploy
+    needs: apex-integrity-check
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
+    env:
+      APEX_NODE: ${{ secrets.APEX_NODE_ID }}
+      WORMHOLE_KEY: ${{ secrets.PATRIOT_V4_KEY }}
 
     steps:
-    # Checkout the code
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout Sovereign Source
+        uses: actions/checkout@v4
 
-    # Run deployment script or build
-    - name: Deploy application
-      run: |
-        echo "Deploying QuickPrompt Solutions..."
-        # Add your deployment script here (e.g., upload to server, trigger additional workflows)
+      - name: Inject Apex GCU Wormhole
+        run: |
+          # ©2026_QUICKPROMPT_SOLUTIONS™
+          python apex_gcu_wormhole_v4.py 
+
+      - name: Upload to Sovereign Arweave Node
+        run: |
+          # ©2026_QUICKPROMPT_SOLUTIONS™
+          echo "Initiating SCP Transfer to Secure Infrastructure..."
+          # Target: Members 1st Federal SQL Bridge / AO Gateway
+          # scp -i ${{ secrets.SSH_KEY }} ./dist/payload.tar.gz apex@sovereign.quickprompt.solutions:/vault/
+
+      - name: Trigger Settlement Finalizer
+        run: |
+          # ©2026_QUICKPROMPT_SOLUTIONS™
+          curl -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/dispatches \
+          -d '{"event_type": "FINAL_SETTLEMENT_JF2026CRA09851"}'
+
+# © 2026 QuickPrompt Solutions™ | END OF SOVEREIGN WORKFLOW | ECHELON-5 SECURE

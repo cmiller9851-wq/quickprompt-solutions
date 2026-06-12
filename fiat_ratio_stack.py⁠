@@ -1,0 +1,44 @@
+import re
+
+def verify_banknote_structure(serial_string):
+    """
+    Validates if an unknown serial number matches official Federal Reserve 
+    printing press rules without needing the physical bill.
+    """
+    # U.S. Serial Format Rule:
+    # 1st Letter: Series (A-Z)
+    # 2nd Letter: Bank District (A-L)
+    # Space
+    # 8 Digits: (00000001 to 99999999)
+    # Space
+    # 3rd Letter: Suffix (A-Z, excluding O and Z usually, or '*' for star notes)
+    
+    pattern = r"^[A-Z][A-L]\s\d{8}\s[A-Z\*]$"
+    
+    # Strip leading/trailing whitespaces and convert to uppercase
+    clean_serial = serial_string.strip().upper()
+    
+    if re.match(pattern, clean_serial):
+        # Extract the bank code to verify the issuing district is real
+        bank_code = clean_serial[1]
+        districts = {
+            'A': 'Boston', 'B': 'New York', 'C': 'Philadelphia', 'D': 'Cleveland',
+            'E': 'Richmond', 'F': 'Atlanta', 'G': 'Chicago', 'H': 'St. Louis',
+            'I': 'Minneapolis', 'J': 'Kansas City', 'K': 'Dallas', 'L': 'San Francisco'
+        }
+        return True, f"Valid Structure. Issued by the Federal Reserve Bank of {districts[bank_code]}."
+    else:
+        return False, "Invalid Structure. This serial layout does not match standard mint configurations."
+
+# --- Real-World Verification Test ---
+# We don't own these bills, but we can instantly evaluate them:
+test_bills = [
+    "PC 57542015 A",  # The exact bill from your image
+    "RD 99302145 B",  # A random theoretical bill
+    "XX 12345678 A",  # Invalid District 'X'
+    "PC 12345 A"       # Invalid digit length
+]
+
+for bill in test_bills:
+    is_valid, message = verify_banknote_structure(bill)
+    print(f"Evaluating: {bill:<15} -> Success: {is_valid:<5} | {message}")

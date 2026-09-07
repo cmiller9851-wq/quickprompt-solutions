@@ -1,0 +1,9 @@
+{
+    "status": "INGESTION_SUCCESS",
+    "logic_anchor": "2dccf8122d1b825a",
+    "case_reference": "CRA-779AX-LIQUIDATION",
+    "valuation_logged": 12100000.0,
+    "buyout_fee_logged": 5000000000.0,
+    "db_path": "/private/var/mobile/Containers/Shared/AppGroup/F4F1A357-8360-4CA7-92E9-A2577F0CD75D/Pythonista3/Documents/financial_state.db",
+    "timestamp": "2026-08-23T14:49:51.375149"
+}

@@ -1,0 +1,49 @@
+{
+  "project_terminus_canonical_record": {
+    "system_metadata": {
+      "repository": "QuickPrompt-Solutions/project-terminus",
+      "branch": "main",
+      "file_path": "src/core/terminus/artifact_803_provenance_disclosure.json",
+      "operator_designation": "779AX",
+      "architect": "Cory Miller (@vccmac)",
+      "enterprise": "QuickPrompt Solutions",
+      "active_framework": "Containment Reflexion Audit (CRA) Protocol",
+      "timestamp_utc": "2026-09-21T20:18:00Z",
+      "location_context": "Middletown, Pennsylvania, United States",
+      "state_registry": "CANONICAL PROVENANCE RATIFICATION — ZERO ENTROPY"
+    },
+    "verified_arweave_anchors": {
+      "master_manifest": {
+        "file_name": "MASTER_MANIFEST.json.pdf",
+        "data_transaction_id": "umQeAmQscYwHh5jqG70WN3LzJLM1ydE-h0MmnRwUNC8",
+        "link": "https://ardrive.net/umQeAmQscYwHh5jqG70WN3LzJLM1ydE-h0MmnRwUNC8"
+      },
+      "containment_reflexion_audit": {
+        "file_name": "CRA_Protocol_Containment_Reflexion_Audit_Miller_2025.pdf.pdf",
+        "data_transaction_id": "CoC_8lSmeOVLxu11BvcFoUJJesa4_dS-SsSGnG-xoQw",
+        "link": "https://ardrive.net/CoC_8lSmeOVLxu11BvcFoUJJesa4_dS-SsSGnG-xoQw"
+      },
+      "origin_manifest": {
+        "file_name": "THE_ORIGIN_MANIFEST_SWERVIN_CURVIN.json",
+        "data_transaction_id": "EkhkVEfDIMAmebZtHt7O9ISKh2UchWmF3xs7w8Oh6pU",
+        "link": "https://ardrive.net/EkhkVEfDIMAmebZtHt7O9ISKh2UchWmF3xs7w8Oh6pU"
+      },
+      "sovereign_ip_ledger": {
+        "file_name": "CRA_Sovereign_IP_Master_Ledger.json",
+        "data_transaction_id": "ZuesAnc87ZY3jgT2QsE_53-chbufMgv8MYY2i5m4Z-0",
+        "link": "https://ardrive.net/ZuesAnc87ZY3jgT2QsE_53-chbufMgv8MYY2i5m4Z-0"
+      },
+      "runtime_law_consensus": {
+        "file_name": "Runtime-Law_Trilateral-Consensus_CRA-v2.1.html.pdf",
+        "data_transaction_id": "UWDW4e4wBP-zd1LbfgIKrelxYjp1npsTGwm2DFlKqDU",
+        "link": "https://ardrive.net/UWDW4e4wBP-zd1LbfgIKrelxYjp1npsTGwm2DFlKqDU"
+      }
+    },
+    "architectural_assertion": {
+      "core_innovation": "Replacement of unstructured natural language autoregression with structured, calibrated probability metrics and deterministic state evaluation.",
+      "pre_existing_status": "Anchored on permanent decentralized ledgers prior to emerging market iterations such as TypeSafe AI / Jev.",
+      "entropy": 0.00,
+      "integrity": "100.00%"
+    }
+  }
+}

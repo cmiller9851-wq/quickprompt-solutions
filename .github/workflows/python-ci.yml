@@ -27,7 +27,7 @@ env:
 jobs:
   validate:
     name: Python 3.12.3 validation
-    runs-on: ubuntu-22.04
+    runs-on: [self-hosted, linux, x64, qps-ci]
     timeout-minutes: 15
 
     steps:

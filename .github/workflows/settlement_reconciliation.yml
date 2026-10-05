@@ -8,6 +8,22 @@ jobs:
   reconciliation:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Verify strict settlement routing manifest
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          routing = json.loads(Path("config/settlement_routing.json").read_text())
+          assert routing["stripe_account_id"] == "acct_1T0RqjD96uXY23io"
+          assert routing["routing_policy"] == "enforce_strict_perimeter"
+          assert routing["reject_alternate_accounts"] is True
+          print("Settlement routing manifest verified for the canonical account.")
+          PY
+
       - name: Anchor Sovereign State
         run: |
           echo "PROTOCOL: PATRIOT_HYPER_BEAM"

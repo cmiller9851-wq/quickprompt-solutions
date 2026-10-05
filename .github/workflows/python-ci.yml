@@ -1,0 +1,58 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+      - global-alpha
+      - 'ci/**'
+  pull_request:
+    branches:
+      - main
+      - global-alpha
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: python-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.12.3"
+  PYTHONUNBUFFERED: "1"
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+
+jobs:
+  validate:
+    name: Python 3.12.3 validation
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Validate tracked JSON manifests
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            python -m json.tool "$file" >/dev/null
+          done < <(git ls-files -z -- '*.json')
+
+      - name: Compile tracked Python sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            python -m py_compile "$file"
+          done < <(git ls-files -z -- '*.py')

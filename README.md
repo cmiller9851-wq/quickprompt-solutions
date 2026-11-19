@@ -4,6 +4,8 @@
 **Settlement ID:** 609-6614781-78931653
 **Global Seal:** a96636cd92231393e326e0bd63c2d9d5f179d4ade2c1184377c5c532f1b77745
 
+> **Alpha status:** This repository is the public coordination point for the QuickPrompt Solutions **Global Alpha**. See [`GLOBAL_ALPHA.md`](GLOBAL_ALPHA.md) for scope, reproducibility requirements, validation gates, and claim-labeling standards. Technical repository records should not be read as independent proof of legal title, settlement, admissibility, or institutional recognition.
+
 ---
 
 ### 1. CORE GOVERNANCE & TERMINAL ENFORCEMENT

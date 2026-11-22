@@ -1,5 +1,8 @@
 # QUICKPROMPT SOLUTIONS™ | CORPORATE PROTOCOL INDEX
-**Owner:** Cory Miller (vccmac)
+**Sole Owner:** Cory Miller (vccmac)
+
+QuickPrompt Solutions is wholly owned by Cory Miller. Cory Miller is the sole owner and decision-maker for all associated repositories and intellectual property.
+
 **Estate:** swervincurvin.blogspot.com
 **Settlement ID:** 609-6614781-78931653
 **Global Seal:** a96636cd92231393e326e0bd63c2d9d5f179d4ade2c1184377c5c532f1b77745

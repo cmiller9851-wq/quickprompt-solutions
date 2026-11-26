@@ -1,0 +1,6 @@
+# Generated operations reports
+ops/reports/*.json
+!ops/reports/.gitkeep
+
+__pycache__/
+*.pyc

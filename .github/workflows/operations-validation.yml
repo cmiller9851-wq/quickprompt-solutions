@@ -1,0 +1,24 @@
+name: Operations Validation
+
+on:
+  pull_request:
+    paths:
+      - 'ops/**'
+      - '.github/workflows/operations-validation.yml'
+  push:
+    branches: [main, master]
+    paths:
+      - 'ops/**'
+      - '.github/workflows/operations-validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-operations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate operating pack
+        run: python3 ops/validate_operations.py

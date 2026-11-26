@@ -23,6 +23,8 @@ REQUIRED_FILES = {
     "deals/deal_schema.json",
     "deals/validate_deal.py",
     "close_runbook.md",
+    "independent_ops.py",
+    "INDEPENDENT_OPERATIONS.md",
 }
 SECRET_PATTERNS = [
     re.compile(r"sk_(?:live|test)_[A-Za-z0-9]+"),
@@ -35,6 +37,7 @@ REQUIRED_TERMS = {
     "release/production_release_checklist.md": ["rollback", "webhook", "no-go"],
     "board/30_day_execution_board.md": ["week 1", "week 2", "week 3", "week 4"],
     "close_runbook.md": ["three-way reconciliation", "segregation-of-duties", "Closed Won"],
+    "INDEPENDENT_OPERATIONS.md": ["independent operations lane", "fails closed", "read-only"],
 }
 
 

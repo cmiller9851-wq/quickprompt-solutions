@@ -11,7 +11,11 @@ This directory is the operating system for the QuickPrompt Solutions platform sp
 - `deals/validate_deal.py` — deterministic transition and evidence-gate validator.
 - `deals/examples/` — redacted positive and negative validation fixtures.
 - `close_runbook.md` — corporate close, settlement, reconciliation, retention, and decision-rights procedure.
+- `independent_ops.py` — owner-controlled local execution lane with a redacted run receipt.
+- `INDEPENDENT_OPERATIONS.md` — portable host and scheduling instructions.
 
 The operating spine is QuickPrompt (commercial), Atlas (billing), Astera (runtime), Aegis (governance), and Settlement Reconciliation Monitor (evidence and finance controls).
 
 Run `python3 validate_operations.py` and `python3 deals/validate_deal.py` before opening a pull request. The deal validator is intentionally dependency-free and treats missing acceptance, version mismatch, failed or disputed payment, duplicate transactions, credit hold, segregation-of-duties conflicts, and reconciliation breaks as no-go conditions.
+
+Run `make independent-operations` from a host authenticated with read access to the full portfolio when GitHub-hosted Actions or repository secret administration is unavailable. The local lane remains read-only and fails closed if fewer than 53 repositories are visible.

@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QuickPrompt Deal Control Record",
+  "description": "Repository-native control record for an evidence-backed corporate quote-to-cash transaction.",
+  "type": "object",
+  "required": ["deal_id", "version", "environment", "owner", "customer", "quotes", "approvals", "acceptance", "billing", "settlement", "reconciliation", "exceptions", "audit_events"],
+  "properties": {
+    "deal_id": {"type": "string", "pattern": "^deal_[A-Za-z0-9._-]+$"},
+    "version": {"type": "integer", "minimum": 1},
+    "environment": {"enum": ["test", "live"]},
+    "owner": {
+      "type": "object",
+      "required": ["user_id", "role"],
+      "properties": {"user_id": {"type": "string"}, "role": {"type": "string"}}
+    },
+    "customer": {
+      "type": "object",
+      "required": ["legal_name", "country", "verified_at"],
+      "properties": {
+        "legal_name": {"type": "string", "minLength": 1},
+        "registration_id": {"type": "string"},
+        "country": {"type": "string", "minLength": 2},
+        "verified_at": {"type": "string", "format": "date-time"},
+        "credit_status": {"enum": ["not_reviewed", "approved", "hold", "rejected"]}
+      }
+    },
+    "quotes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["quote_id", "quote_version", "content_hash", "currency", "total_minor", "status", "created_at"],
+        "properties": {
+          "quote_id": {"type": "string"},
+          "quote_version": {"type": "integer", "minimum": 1},
+          "content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "currency": {"type": "string", "pattern": "^[A-Z]{3}$"},
+          "total_minor": {"type": "integer", "minimum": 0},
+          "discount_percent": {"type": "number", "minimum": 0, "maximum": 100},
+          "status": {"enum": ["draft", "approved", "sent", "accepted", "expired", "void", "superseded"]},
+          "created_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["approval_id", "approver_id", "decision", "approved_quote_version", "approved_content_hash", "decided_at"],
+        "properties": {
+          "approval_id": {"type": "string"},
+          "approver_id": {"type": "string"},
+          "decision": {"enum": ["approved", "rejected", "revoked"]},
+          "approved_quote_version": {"type": "integer", "minimum": 1},
+          "approved_content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "decided_at": {"type": "string", "format": "date-time"},
+          "threshold_basis": {"type": "string"}
+        }
+      }
+    },
+    "acceptance": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["missing", "pending", "accepted", "rejected", "expired", "void"]},
+        "method": {"enum": ["docusign", "ironclad", "portal", "order_form", "other"]},
+        "signer_name": {"type": "string"},
+        "signer_authority_evidence": {"type": "string"},
+        "accepted_quote_version": {"type": "integer", "minimum": 1},
+        "accepted_content_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "evidence_uri": {"type": "string"},
+        "accepted_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "billing": {
+      "type": "object",
+      "required": ["invoice_state"],
+      "properties": {
+        "invoice_id": {"type": "string"},
+        "invoice_state": {"enum": ["not_issued", "draft", "issued", "paid", "void", "uncollectible"]},
+        "payment_state": {"enum": ["not_started", "pending", "succeeded", "failed", "canceled", "disputed", "refunded"]},
+        "provider": {"type": "string"},
+        "provider_account_ref": {"type": "string"},
+        "amount_due_minor": {"type": "integer", "minimum": 0},
+        "currency": {"type": "string", "pattern": "^[A-Z]{3}$"},
+        "issued_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "settlement": {
+      "type": "object",
+      "required": ["state"],
+      "properties": {
+        "state": {"enum": ["not_due", "pending", "processor_confirmed", "bank_settled", "failed", "reversed", "unknown"]},
+        "settlement_reference": {"type": "string"},
+        "settled_amount_minor": {"type": "integer", "minimum": 0},
+        "settled_currency": {"type": "string", "pattern": "^[A-Z]{3}$"},
+        "settled_at": {"type": "string", "format": "date-time"},
+        "evidence_uri": {"type": "string"}
+      }
+    },
+    "reconciliation": {
+      "type": "object",
+      "required": ["state"],
+      "properties": {
+        "state": {"enum": ["not_started", "matched", "partial_match", "exception", "cleared"]},
+        "invoice_payment_match": {"type": "boolean"},
+        "payment_settlement_match": {"type": "boolean"},
+        "duplicate_check": {"enum": ["not_run", "clear", "duplicate_found"]},
+        "reviewer_id": {"type": "string"},
+        "reviewed_at": {"type": "string", "format": "date-time"},
+        "exception_reason": {"type": "string"}
+      }
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["exception_id", "type", "status", "opened_at"],
+        "properties": {
+          "exception_id": {"type": "string"},
+          "type": {"enum": ["approval_gap", "version_mismatch", "payment_failure", "dispute", "duplicate", "credit_hold", "reconciliation_break", "integration_failure", "other"]},
+          "status": {"enum": ["open", "waived", "resolved", "rolled_back"]},
+          "opened_at": {"type": "string", "format": "date-time"},
+          "resolved_at": {"type": "string", "format": "date-time"},
+          "resolution": {"type": "string"}
+        }
+      }
+    },
+    "audit_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["event_id", "event_type", "actor_id", "occurred_at", "from_state", "to_state", "correlation_id"],
+        "properties": {
+          "event_id": {"type": "string"},
+          "event_type": {"type": "string"},
+          "actor_id": {"type": "string"},
+          "occurred_at": {"type": "string", "format": "date-time"},
+          "from_state": {"type": "string"},
+          "to_state": {"type": "string"},
+          "correlation_id": {"type": "string"},
+          "metadata_hash": {"type": "string"}
+        }
+      }
+    }
+  }
+}

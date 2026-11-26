@@ -20,6 +20,9 @@ REQUIRED_FILES = {
     "release/production_release_checklist.md",
     "metrics/kpi_schema.json",
     "board/30_day_execution_board.md",
+    "deals/deal_schema.json",
+    "deals/validate_deal.py",
+    "close_runbook.md",
 }
 SECRET_PATTERNS = [
     re.compile(r"sk_(?:live|test)_[A-Za-z0-9]+"),
@@ -31,6 +34,7 @@ REQUIRED_TERMS = {
     "evidence/evidence_control_policy.md": ["source_class", "reconciled", "redaction"],
     "release/production_release_checklist.md": ["rollback", "webhook", "no-go"],
     "board/30_day_execution_board.md": ["week 1", "week 2", "week 3", "week 4"],
+    "close_runbook.md": ["three-way reconciliation", "segregation-of-duties", "Closed Won"],
 }
 
 
@@ -63,6 +67,21 @@ def main() -> int:
     if len(ids) != len(set(ids)):
         fail("KPI IDs must be unique")
 
+    try:
+        deal_schema = json.loads((ROOT / "deals/deal_schema.json").read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        fail(f"invalid deal schema: {exc}")
+    required = set(deal_schema.get("required", []))
+    expected = {"deal_id", "environment", "owner", "customer", "quotes", "approvals", "acceptance", "billing", "settlement", "reconciliation", "exceptions", "audit_events"}
+    if not expected.issubset(required):
+        fail("deal schema is missing required quote-to-cash fields")
+
+    import subprocess
+    deal_validator = ROOT / "deals/validate_deal.py"
+    result = subprocess.run([sys.executable, str(deal_validator)], capture_output=True, text=True)
+    if result.returncode:
+        fail("deal fixtures failed validation: " + result.stdout + result.stderr)
+
     scanned = 0
     for path in ROOT.rglob("*"):
         if not path.is_file() or ".git" in path.parts:
@@ -73,7 +92,7 @@ def main() -> int:
             if pattern.search(text):
                 fail(f"secret-like material detected in {path.relative_to(ROOT)}")
 
-    print(f"OPS_VALID: files={scanned} metrics={len(metrics)}")
+    print(f"OPS_VALID: files={scanned} metrics={len(metrics)} deal_fixtures=pass")
     return 0
 
 

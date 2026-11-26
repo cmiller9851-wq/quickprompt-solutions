@@ -1,0 +1,25 @@
+{
+  "deal_id": "deal_demo_001",
+  "version": 1,
+  "environment": "test",
+  "owner": {"user_id": "seller-001", "role": "commercial_owner"},
+  "customer": {"legal_name": "Example Customer Ltd", "country": "US", "verified_at": "2026-11-26T00:00:00Z", "credit_status": "approved"},
+  "quotes": [{"quote_id": "quote_demo_001", "quote_version": 1, "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "currency": "USD", "total_minor": 19000, "discount_percent": 0, "status": "accepted", "created_at": "2026-11-26T00:01:00Z"}],
+  "approvals": [{"approval_id": "approval_demo_001", "approver_id": "finance-001", "decision": "approved", "approved_quote_version": 1, "approved_content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "decided_at": "2026-11-26T00:02:00Z", "threshold_basis": "standard"}],
+  "acceptance": {"status": "accepted", "method": "docusign", "signer_name": "Authorized Signer", "signer_authority_evidence": "authority-record-001", "accepted_quote_version": 1, "accepted_content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "evidence_uri": "evidence://acceptance/demo-001", "accepted_at": "2026-11-26T00:03:00Z"},
+  "billing": {"invoice_id": "inv_demo_001", "invoice_state": "paid", "payment_state": "succeeded", "provider": "stripe", "provider_account_ref": "acct_redacted", "amount_due_minor": 19000, "currency": "USD", "issued_at": "2026-11-26T00:04:00Z"},
+  "settlement": {"state": "bank_settled", "settlement_reference": "settlement-redacted", "settled_amount_minor": 19000, "settled_currency": "USD", "settled_at": "2026-11-26T00:05:00Z", "evidence_uri": "evidence://settlement/demo-001"},
+  "reconciliation": {"state": "cleared", "invoice_payment_match": true, "payment_settlement_match": true, "duplicate_check": "clear", "reviewer_id": "recon-001", "reviewed_at": "2026-11-26T00:06:00Z"},
+  "exceptions": [],
+  "audit_events": [{"event_id": "event-001", "event_type": "deal_created", "actor_id": "seller-001", "occurred_at": "2026-11-26T00:00:00Z", "from_state": "Draft", "to_state": "Draft", "correlation_id": "corr-001", "metadata_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"}],
+  "state_history": [
+    {"from_state": "Draft", "to_state": "Qualified"},
+    {"from_state": "Qualified", "to_state": "Approval Pending"},
+    {"from_state": "Approval Pending", "to_state": "Approved to Send"},
+    {"from_state": "Approved to Send", "to_state": "Sent"},
+    {"from_state": "Sent", "to_state": "Accepted/Signed"},
+    {"from_state": "Accepted/Signed", "to_state": "Invoice Issued"},
+    {"from_state": "Invoice Issued", "to_state": "Payment Confirmed/Settled"},
+    {"from_state": "Payment Confirmed/Settled", "to_state": "Closed Won"}
+  ]
+}

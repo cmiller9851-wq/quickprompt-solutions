@@ -39,6 +39,20 @@
 - [ ] Export contains provenance and redaction metadata
 - [ ] Security review completed
 
+## Quote-to-cash control gate
+
+- [ ] Deal record contains customer legal entity, owner, environment, quote versions, hashes, approvals, acceptance, billing, settlement, reconciliation, exceptions, and audit events
+- [ ] Threshold routing and ordered approvals tested with segregation-of-duties checks
+- [ ] Discount, amount, scope, legal-term, or billing-term changes create a new quote version and require reapproval
+- [ ] Unauthorized signer, expired document, void document, and acceptance/version mismatch are negative-path no-go tests
+- [ ] Invoice cannot issue without exact customer acceptance tied to the approved quote hash
+- [ ] Payment failure, dispute, refund, reversal, credit hold, duplicate transaction, and uncollectible paths are tested
+- [ ] Processor confirmation is not labeled bank settlement
+- [ ] Three-way reconciliation matches quote/invoice, payment, and settlement independently
+- [ ] Webhook replay, duplicate event, out-of-order event, signature failure, integration outage, pause/resume, and cancellation are tested
+- [ ] Amendments and reconciliation exceptions preserve the original evidence and produce a new audit trail
+- [ ] Audit-log completeness, event idempotency, retry latency, and integration failure alerts are measured
+
 ## Operations gate
 
 - [ ] Monitoring dashboard available
@@ -47,11 +61,15 @@
 - [ ] Rollback artifact available
 - [ ] Backup/restore check completed
 - [ ] Customer communication prepared if behavior changes
+- [ ] External deployment and preview statuses are classified as advisory unless explicitly adopted with an independent fallback
+- [ ] Provider outage, account lock, expired integration, and missing provider credential have a documented local or owner-controlled fallback
 
 ## Go / no-go
 
 - **GO:** every mandatory gate is checked, evidence references are attached, and rollback is rehearsed.
 - **NO-GO:** any secret exposure, account mismatch, untested payment path, missing rollback, unresolved critical vulnerability, or ambiguous financial state.
+- **NO-GO:** missing approval, signer-authority evidence, quote-hash mismatch, failed/disputed/refunded payment, duplicate transaction, credit hold, open reconciliation exception, or incomplete audit trail.
+- **External-status rule:** a third-party deployment or preview failure does not override passing QuickPrompt-native validation unless that provider is explicitly listed as a tested release dependency with an independent fallback.
 
 ## Rollback
 

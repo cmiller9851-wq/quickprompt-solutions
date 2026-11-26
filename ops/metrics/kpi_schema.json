@@ -13,6 +13,23 @@
     {"id":"mean_time_to_detect","definition":"Median time from incident start to detection","source":"observability","target":"set_baseline_first"},
     {"id":"mean_time_to_recover","definition":"Median time from incident detection to service recovery","source":"incident management","target":"set_baseline_first"},
     {"id":"verified_claim_ratio","definition":"Material production claims linked to Class A or Class B evidence divided by all material production claims","source":"evidence ledger","target":"100_percent_for_financial_claims"}
+    ,{"id":"approval_cycle_time","definition":"Elapsed time from Approval Pending to Approved to Send, by deal and period","source":"deal audit events","target":"set_baseline_first"}
+    ,{"id":"approval_aging","definition":"Open Approval Pending deals grouped by age bucket","source":"deal state history","target":"zero_overdue"}
+    ,{"id":"first_pass_approval_rate","definition":"Deals approved without rejection, reapproval, or quote-version restart divided by approval submissions","source":"deal approvals","target":"set_baseline_first"}
+    ,{"id":"evidence_completeness_by_gate","definition":"Deals with all required evidence for each controlled gate divided by deals reaching that gate","source":"deal control records","target":"100_percent"}
+    ,{"id":"segregation_of_duties_conflicts","definition":"Deals where owner, approver, payment initiator, or reconciliation reviewer violates role separation","source":"deal actors and audit events","target":"zero"}
+    ,{"id":"quote_to_sign_conversion","definition":"Sent quotes with exact customer acceptance divided by sent quotes, excluding expired and canceled records","source":"quotes and acceptance evidence","target":"set_baseline_first"}
+    ,{"id":"reapproval_rate","definition":"Deals requiring approval again after a quote, discount, scope, or term change divided by approved deals","source":"quote versions and approvals","target":"set_baseline_first"}
+    ,{"id":"acceptance_to_invoice_lag","definition":"Elapsed time between exact customer acceptance and invoice issuance","source":"acceptance and billing audit events","target":"set_baseline_first"}
+    ,{"id":"invoice_to_settlement_lag","definition":"Elapsed time between invoice issuance and authenticated settlement evidence","source":"billing and settlement records","target":"set_baseline_first"}
+    ,{"id":"failed_disputed_refunded_payment_rate","definition":"Payments in failed, disputed, or refunded states divided by payment attempts in the same environment","source":"Stripe payment state plus reconciliation","target":"set_baseline_first"}
+    ,{"id":"reconciliation_match_rate","definition":"Deals with matched or cleared three-way reconciliation divided by reconciliation-ready deals","source":"Settlement Reconciliation Monitor","target":"100_percent_before_close"}
+    ,{"id":"reconciliation_exception_aging","definition":"Age of unresolved reconciliation exceptions from opening to resolution or rollback","source":"deal exceptions","target":"zero_overdue"}
+    ,{"id":"duplicate_no_go_rate","definition":"Deals blocked by duplicate transaction or other explicit no-go control divided by attempted closes","source":"deal validator and exceptions","target":"zero_unexplained"}
+    ,{"id":"rollback_amendment_rate","definition":"Closed or invoiced deals requiring rollback or amendment divided by closed or invoiced deals","source":"deal audit events and exceptions","target":"set_baseline_first"}
+    ,{"id":"audit_log_completeness","definition":"Material state changes with complete actor, timestamp, correlation, prior-state, next-state, and metadata evidence divided by material state changes","source":"deal audit events","target":"100_percent"}
+    ,{"id":"webhook_integration_failure_rate","definition":"Inbound integration events that fail signature, idempotency, ordering, or processing checks divided by received events","source":"integration event ledger","target":"set_baseline_first"}
+    ,{"id":"webhook_processing_latency","definition":"Elapsed time from provider event first-seen to accepted processing outcome","source":"integration event ledger","target":"set_baseline_first"}
   ],
   "rules": [
     "Do not count internal ledger constants, document repetition, or generated narratives as revenue or balance metrics.",

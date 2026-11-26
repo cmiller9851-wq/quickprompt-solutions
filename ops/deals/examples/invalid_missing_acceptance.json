@@ -1,0 +1,24 @@
+{
+  "_expected": "invalid",
+  "deal_id": "deal_demo_002",
+  "version": 1,
+  "environment": "test",
+  "owner": {"user_id": "seller-002", "role": "commercial_owner"},
+  "customer": {"legal_name": "Example Customer Ltd", "country": "US", "verified_at": "2026-11-26T00:00:00Z"},
+  "quotes": [{"quote_id": "quote_demo_002", "quote_version": 2, "content_hash": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc", "currency": "USD", "total_minor": 1000, "status": "sent", "created_at": "2026-11-26T00:01:00Z"}],
+  "approvals": [{"approval_id": "approval_demo_002", "approver_id": "finance-002", "decision": "approved", "approved_quote_version": 1, "approved_content_hash": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "decided_at": "2026-11-26T00:02:00Z"}],
+  "acceptance": {"status": "missing"},
+  "billing": {"invoice_state": "issued", "payment_state": "pending"},
+  "settlement": {"state": "not_due"},
+  "reconciliation": {"state": "not_started", "duplicate_check": "not_run"},
+  "exceptions": [],
+  "audit_events": [{"event_id": "event-002", "event_type": "deal_created", "actor_id": "seller-002", "occurred_at": "2026-11-26T00:00:00Z", "from_state": "Draft", "to_state": "Draft", "correlation_id": "corr-002"}],
+  "state_history": [
+    {"from_state": "Draft", "to_state": "Qualified"},
+    {"from_state": "Qualified", "to_state": "Approval Pending"},
+    {"from_state": "Approval Pending", "to_state": "Approved to Send"},
+    {"from_state": "Approved to Send", "to_state": "Sent"},
+    {"from_state": "Sent", "to_state": "Accepted/Signed"},
+    {"from_state": "Accepted/Signed", "to_state": "Invoice Issued"}
+  ]
+}

@@ -61,12 +61,15 @@
 - [ ] Rollback artifact available
 - [ ] Backup/restore check completed
 - [ ] Customer communication prepared if behavior changes
+- [ ] External deployment and preview statuses are classified as advisory unless explicitly adopted with an independent fallback
+- [ ] Provider outage, account lock, expired integration, and missing provider credential have a documented local or owner-controlled fallback
 
 ## Go / no-go
 
 - **GO:** every mandatory gate is checked, evidence references are attached, and rollback is rehearsed.
 - **NO-GO:** any secret exposure, account mismatch, untested payment path, missing rollback, unresolved critical vulnerability, or ambiguous financial state.
 - **NO-GO:** missing approval, signer-authority evidence, quote-hash mismatch, failed/disputed/refunded payment, duplicate transaction, credit hold, open reconciliation exception, or incomplete audit trail.
+- **External-status rule:** a third-party deployment or preview failure does not override passing QuickPrompt-native validation unless that provider is explicitly listed as a tested release dependency with an independent fallback.
 
 ## Rollback
 

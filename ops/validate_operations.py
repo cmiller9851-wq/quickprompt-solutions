@@ -25,6 +25,7 @@ REQUIRED_FILES = {
     "close_runbook.md",
     "independent_ops.py",
     "INDEPENDENT_OPERATIONS.md",
+    "governance/external_dependency_policy.md",
 }
 SECRET_PATTERNS = [
     re.compile(r"sk_(?:live|test)_[A-Za-z0-9]+"),
@@ -38,6 +39,7 @@ REQUIRED_TERMS = {
     "board/30_day_execution_board.md": ["week 1", "week 2", "week 3", "week 4"],
     "close_runbook.md": ["three-way reconciliation", "segregation-of-duties", "Closed Won"],
     "INDEPENDENT_OPERATIONS.md": ["independent operations lane", "fails closed", "read-only"],
+    "governance/external_dependency_policy.md": ["advisory", "independent fallback", "not authoritative"],
 }
 
 

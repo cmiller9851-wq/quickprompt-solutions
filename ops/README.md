@@ -13,6 +13,7 @@ This directory is the operating system for the QuickPrompt Solutions platform sp
 - `close_runbook.md` — corporate close, settlement, reconciliation, retention, and decision-rights procedure.
 - `independent_ops.py` — owner-controlled local execution lane with a redacted run receipt.
 - `INDEPENDENT_OPERATIONS.md` — portable host and scheduling instructions.
+- `governance/external_dependency_policy.md` — boundary between QuickPrompt controls and third-party status signals.
 
 The operating spine is QuickPrompt (commercial), Atlas (billing), Astera (runtime), Aegis (governance), and Settlement Reconciliation Monitor (evidence and finance controls).
 

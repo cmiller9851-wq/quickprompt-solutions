@@ -1,0 +1,32 @@
+name: Portfolio Operations
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+    paths:
+      - 'ops/**'
+      - '.github/workflows/portfolio-operations.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  portfolio-health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Run 53-repository portfolio health check
+        env:
+          GH_TOKEN: ${{ secrets.PORTFOLIO_GITHUB_TOKEN || github.token }}
+        run: python3 ops/portfolio_ops.py
+      - name: Upload portfolio health report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-health-report
+          path: ops/reports/portfolio-health.json
+          if-no-files-found: error

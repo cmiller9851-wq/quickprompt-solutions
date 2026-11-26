@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "owner": "Cory Miller",
+  "metrics": [
+    {"id":"qualified_signups_weekly","definition":"New users meeting the target customer profile per week","source":"product_analytics","target":"set_baseline_first"},
+    {"id":"activation_rate","definition":"New accounts completing the first value event within 7 days divided by new accounts","source":"product_events","target":"set_baseline_first"},
+    {"id":"trial_to_paid","definition":"Eligible trials converting to an active paid subscription","source":"Atlas/Stripe","target":"set_baseline_first"},
+    {"id":"monthly_recurring_revenue","definition":"Active recurring subscription revenue recognized for the period","source":"Stripe plus accounting reconciliation","target":"primary_growth_metric"},
+    {"id":"net_revenue_retention","definition":"Beginning recurring revenue plus expansion minus contraction and churn divided by beginning recurring revenue","source":"Stripe plus accounting reconciliation","target":"set_baseline_first"},
+    {"id":"payment_failure_recovery","definition":"Failed recurring payments recovered within the recovery window","source":"Atlas/Stripe","target":"set_baseline_first"},
+    {"id":"workflow_success_rate","definition":"Completed customer workflows divided by started workflows, excluding test traffic","source":"Astera/product telemetry","target":"set_baseline_first"},
+    {"id":"evidence_reconciliation_error_rate","definition":"Material payment records requiring correction divided by material payment records","source":"Settlement Reconciliation Monitor","target":"zero_unexplained"},
+    {"id":"mean_time_to_detect","definition":"Median time from incident start to detection","source":"observability","target":"set_baseline_first"},
+    {"id":"mean_time_to_recover","definition":"Median time from incident detection to service recovery","source":"incident management","target":"set_baseline_first"},
+    {"id":"verified_claim_ratio","definition":"Material production claims linked to Class A or Class B evidence divided by all material production claims","source":"evidence ledger","target":"100_percent_for_financial_claims"}
+  ],
+  "rules": [
+    "Do not count internal ledger constants, document repetition, or generated narratives as revenue or balance metrics.",
+    "Every metric must record period, environment, owner, query or source reference, and data-quality status.",
+    "Test and live traffic must remain separated.",
+    "A missing source reference makes a metric provisional, not verified."
+  ]
+}
